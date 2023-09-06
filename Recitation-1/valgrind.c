@@ -49,7 +49,7 @@ void invalid_read()
 
 int main()
 {
-    //memory_lost_reachable();
+    memory_lost_reachable();
    // memory_def_lost();
     //memory_indirect_lost();
    // possibly_lost();

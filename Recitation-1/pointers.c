@@ -20,10 +20,9 @@ void add_example()
 
 	int *ptr_a = &a;
 	printf("ptr_a value is: %p\nptr_a dereferenced value is: %d\n", ptr_a, *ptr_a);
-	int *ptr_b = &b;
 
 
-	add_b_to_a(ptr_a, ptr_b);
+	add_b_to_a(ptr_a, &b);
 	printf("a is %d\n", a);
 }
 
@@ -33,7 +32,7 @@ void add_another_way(int* output, int num1, int num2)
 {
 	//int * added = malloc(sizeof(int));
 	int added = num1 + num2;
-	output = added;
+	output = &added;
 }
 
 
@@ -47,11 +46,11 @@ void ret_bad_example()
 
 
 
+
 int main(int argc, char ** argv)
 {
 
 	add_example();
 	ret_bad_example();
-	double_array();
 	
 }

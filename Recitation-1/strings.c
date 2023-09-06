@@ -32,7 +32,7 @@ void weird_string_behavior()
 	// Points to string literal, which is a strange thing in c
 	char preset_str[] = "I am preset string";
 
-	//printf("Memory location preset_str points to is %p\n", preset_str);
+	printf("Memory location preset_str points to is %p\n", preset_str);
 	
 	char stack_str[10];
 	printf("Memory location stack_str points to is %p\n", stack_str);
@@ -40,7 +40,7 @@ void weird_string_behavior()
 	//stack_str = "I am stack string"; // Try running!
 	memcpy(stack_str, preset_str, 10);
 	// Prints stack_str as a string
-	printf("stack_str is %s\n", stack_str);
+	printf("stack_str is: %s\n", stack_str);
 }
 
 
