@@ -35,16 +35,24 @@ int* possibly_lost()
     exit(0);
 }
 
- invalid_read_helper()
+ int* uninitialised_stack_helper()
 {
     int *a;
     int b = 10;
     a = &b;
+    return a;
 }
 
-void invalid_read()
+void uninitialised_stack()
 {
-    
+    int * ret = invalid_read_helper();
+    printf("ret is %d\n", *ret);
+}
+
+void uninitialized_heap()
+{
+    char* array = malloc(10);
+    printf("char val at 0 is %c\n", array[0]);
 }
 
 int main()
@@ -53,6 +61,8 @@ int main()
    // memory_def_lost();
     //memory_indirect_lost();
    // possibly_lost();
+   //uninitialized_heap();
+   uninitialised_stack();
 
 
 }
