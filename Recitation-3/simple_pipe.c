@@ -22,12 +22,13 @@ int main()
 	}
 
 	if (cpid == 0) { // child
-	close(pipefd[1]);
-	while(read(pipefd[0], &buf, 1) > 0)
-		write(STDOUT_FILENO, &buf, 1);
-	write(STDOUT_FILENO, "\n", 1);
-	close(pipefd[0]);
-	exit(EXIT_SUCCESS);
+		close(pipefd[1]);
+		while(read(pipefd[0], &buf, 1) > 0)
+			write(STDOUT_FILENO, &buf, 1);
+			
+		write(STDOUT_FILENO, "\n", 1);
+		close(pipefd[0]);
+		exit(EXIT_SUCCESS);
 	} else {
 		close(pipefd[0]);
 		write(pipefd[1], "hi", 3);
