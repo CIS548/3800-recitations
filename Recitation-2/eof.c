@@ -9,7 +9,7 @@ int main(void) {
     // printf("%s\n", buf);
     ssize_t bytesRead = read(STDIN_FILENO, buf, 50);
 
-    // buf[res] = '\0';   // valgrind
+    buf[bytesRead] = '\0';   // valgrind
 
     printf("buf is: %s, strlen: %ld, bytesRead: %ld\n", buf, strlen(buf), bytesRead);
 
