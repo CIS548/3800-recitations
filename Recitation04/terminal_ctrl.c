@@ -38,7 +38,7 @@ int main()
 {
 	char buf[100];
 	// Is this needed?
-	signal(SIGTTOU, SIG_IGN);
+	// signal(SIGTTOU, SIG_IGN);
 	
 	signal(SIGALRM, alarm_handler);
 	signal(SIGINT, sigint_handler);
